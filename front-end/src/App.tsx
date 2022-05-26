@@ -51,7 +51,7 @@ function App() {
         setUrl({ value: '', error: false });
         setTokenizedUrl({
           origin: $tokenizedUrl.origin,
-          shortenedUrl: `http://localhost:4000/${$tokenizedUrl.token}`,
+          shortenedUrl: `http://localhost:4000/short/${$tokenizedUrl.token}`,
         });
       }
     }
