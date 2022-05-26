@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Url } from '../../entities/url.entity';
 import { Repository } from 'typeorm';
+import { count, timeStamp } from 'console';
 
 @Injectable()
 export class ShortService {
@@ -21,5 +22,22 @@ export class ShortService {
         token: token
       }
     })
+  }
+
+  incrementCounter (token:string) {
+    if (!token) {
+      return null
+    }
+
+    // seems OK to prevent SQL injection as `token` will be escaped before
+    // being injected as `:token` parameter
+    return this.repository.createQueryBuilder()
+      .update()
+      .set({
+        count: () => "count + 1"
+      })
+      .where("token = :token", { token })
+      .execute()
+
   }
 }

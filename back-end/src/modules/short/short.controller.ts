@@ -22,6 +22,8 @@ export class ShortController {
       return
     }
 
+    await this.service.incrementCounter(params.token)
+
     res.redirect(HttpStatus.FOUND, d.origin)
   }
 }

@@ -10,4 +10,7 @@ export class Url {
 
   @Column()
   origin: string;
+
+  @Column({ default: 0 })
+  count: number;
 }
