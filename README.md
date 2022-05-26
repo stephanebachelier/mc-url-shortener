@@ -1,4 +1,4 @@
-# Mobile Club: URL shortener test
+# URL shortener test
 
 > ❗️ We do not want you to spend more than 3 hours on this test.
 > Please turn in your test even if it is not functional.
@@ -59,9 +59,10 @@ location, so when I share a link it appears shorter.
 imagination started: usage count, expiration date, authentication, user agent
 tracking.
 
-## Submitting your test
+## Implementation 
 
-- Upload the project on a public repository (Github, Gitlab, BitBucket...)
-- Send the link of the project by email to `tech@mobile.club`
+- url shorten as an unique 10 alphanumeric characters long token to be append to a short domain. For now the url is shortened as `http://localhost:4000/short/:token`. A short domain should be used and using a nginx server should act as a proxy to the backend server
+- to create a shortened url go to the main frontend page. Click on the second url to open a new browser tab that will opened the first url (the one typed).
+- basic validation has been done but it's rather incomplete.
+- extra stuff has been done with the addition of an access counter saved in the Url table each time the short url is accessed.
 
-🍀 Best of luck, from Mobile Club’s tech team.
