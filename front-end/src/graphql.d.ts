@@ -21,6 +21,7 @@ export type MessageDto = {
 export type Mutation = {
   __typename?: 'Mutation';
   message: MessageDto;
+  url: UrlDto;
 };
 
 
@@ -28,7 +29,20 @@ export type MutationMessageArgs = {
   message: Scalars['String'];
 };
 
+
+export type MutationUrlArgs = {
+  origin: Scalars['String'];
+};
+
 export type Query = {
   __typename?: 'Query';
   messages: Array<MessageDto>;
+  urls: Array<UrlDto>;
+};
+
+export type UrlDto = {
+  __typename?: 'UrlDto';
+  id?: Maybe<Scalars['Int']>;
+  origin: Scalars['String'];
+  token: Scalars['String'];
 };

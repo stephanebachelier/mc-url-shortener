@@ -1,0 +1,7 @@
+mutation addUrl($origin: String!) {
+  url(origin: $origin) {
+    token
+    origin
+  }
+}
+
